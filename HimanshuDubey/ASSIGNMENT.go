@@ -10,15 +10,12 @@
 // =========================================================
 package main
 
-import (
-	"fmt"
-	"internal/fmtsort"
-)
+import "fmt"
 
 func main() {
 
 	var number int;
-	fmt.Scanln(&number)
+	fmt.Scan(&number)
 
 	if number >0 {
 		fmt.Println("Positive number")
@@ -45,7 +42,7 @@ func main() {
 func second() {
 
 	var age int;
-	fmt.Scanln(&age)
+	fmt.Scan(&age)
 
 	if age >=18 {
 		fmt.Println("Eligible for vote")
@@ -67,7 +64,7 @@ func second() {
 func third() {
 
 	var n int;
-	fmt.Scanln(&n)
+	fmt.Scan(&n)
 
 	if n%2==0 {
 		fmt.Println("Even")
@@ -89,7 +86,7 @@ func third() {
 func forth() {
 	var marks int;
 
-	fmt.Scanln(&marks)
+	fmt.Scan(&marks)
 
 	if marks >= 40 {
 		fmt.Println("Pass")
@@ -108,14 +105,14 @@ func forth() {
 func fifth() {
 	var year int;
 
-	fmt.Scanln(&year)
+	fmt.Scan(&year)
 
 	if year % 100==0 {
 		fmt.Println("Not a leap")
 
 	} else if year % 4 == 0{
 		fmt.Println("leap")
-		
+
 	} else{
 		fmt.Println("Not a leap")
 	}
@@ -137,7 +134,24 @@ func fifth() {
 
 // =========================================================
 
+func bone() {
+	var marks int;
 
+	fmt.Scan(&marks)
+
+	if marks>= 90 {
+		fmt.Println("Grade A")
+
+	} else if marks>= 75 {
+		fmt.Println("Grade B")
+		
+	} else if marks>= 60 {
+		fmt.Println("Grade C")
+	} else {
+		fmt.Println("Grade F")
+
+	}
+}
 
 
 // =========================================================
@@ -146,7 +160,23 @@ func fifth() {
 
 // =========================================================
 
+func btwo() {
+	var a int;
+	var b int;
 
+	fmt.Scan(&a)
+	fmt.Scan(&b)
+
+	if a>b {
+		fmt.Println(a, "is greater")
+
+	} else if a == b {
+		fmt.Println("Equal")
+	} else {
+		fmt.Println(b, " is greater")
+	}
+
+}
 
 
 // =========================================================
@@ -155,7 +185,17 @@ func fifth() {
 
 // =========================================================
 
+func bthree() {
+	var a string
+	fmt.Scan(&a)
 
+	switch a {
+	case "a", "e", "i", "o", "u":
+		fmt.Println(a,"is vowel.")
+	default:
+		fmt.Println(a,"is consonant.")
+	}
+}
 
 
 // =========================================================
@@ -164,7 +204,17 @@ func fifth() {
 
 // =========================================================
 
+func bfour() {
+	var day string
+	fmt.Scan(&day)
 
+	switch day {
+	case "Saturday", "Sunday":
+		fmt.Println("Weekend")
+	default:
+		fmt.Println("Weekday")
+	}
+}
 
 
 // =========================================================
@@ -174,7 +224,14 @@ func fifth() {
 // =========================================================
 
 
+func bfive() {
+	var num int;
+	fmt.Scan(&num)
 
+	if num%3 == 0 && num%5 == 0 {
+		fmt.Println(num, "is divisible by both 3 & 5.")
+	}
+}
 
 // =========================================================
 
@@ -200,7 +257,7 @@ func fifth() {
 // 1. Write a program to simulate a login system:
 //    - Ask the user to enter a username and password.
 //    - If both match predefined values, print “Login successful”.
-//    - If username is correct but password is wrong, print “Invalid password”.
+//    - If username is trial but password is wrong, print “Invalid password”.
 //    - Otherwise, print “User not found”.
 
 // Hint: You can compare input strings using the == operator.
@@ -208,6 +265,22 @@ func fifth() {
 
 // =========================================================
 
+func cone() {
+	var username, password string;
+	const trialUsername = "himanshu"
+	const trialPassword = "abc123"
+
+	fmt.Scan(&username)
+	fmt.Scan(&password)
+
+	if username == trialUsername && password == trialPassword {
+		fmt.Println("Login successful")
+	} else if username == trialUsername && password != trialPassword {
+		fmt.Println("Invalid password")
+	} else {
+		fmt.Println("User not found")
+	}
+}
 
 
 
@@ -223,6 +296,30 @@ func fifth() {
 
 // =========================================================
 
+func ctwo() {
+	var a int;
+	var b int;
+	var c int;
+
+	fmt.Print("Enter side a: ")
+	fmt.Scan(&a)
+	fmt.Print("Enter side b: ")
+	fmt.Scan(&b)
+	fmt.Print("Enter side c: ")
+	fmt.Scan(&c)
+
+	if a == b {
+		if b == c {
+			fmt.Println("Equilateral.")
+		} else {
+			fmt.Println("Isosceles.")
+		}
+	} else if b == c || a == c {
+		fmt.Println("Isosceles.")
+	} else {
+		fmt.Println("Scalene.")
+	}
+}
 
 
 
@@ -239,7 +336,28 @@ func fifth() {
 
 // =========================================================
 
+func cthree() {
+	var choice int;
 
+	fmt.Println("Main Menu")
+	fmt.Println("1 → Start Game")
+	fmt.Println("2 → Load Game")
+	fmt.Println("3 → Exit")
+
+	fmt.Print("Enter your choice (1, 2, or 3): ")
+	fmt.Scan(&choice)
+
+	switch choice {
+	case 1:
+		fmt.Println("Starting game...")
+	case 2:
+		fmt.Println("Loading game...")
+	case 3:
+		fmt.Println("Exiting... Goodbye!")
+	default:
+		fmt.Println("Invalid option.")
+	}
+}
 
 
 // =========================================================
@@ -258,6 +376,26 @@ func fifth() {
 
 
 
+func cfour() {
+    var temp int
+
+    fmt.Print("Enter the current temperature: ")
+    fmt.Scan(&temp)
+
+    switch {
+    case temp < 0:
+        fmt.Println("Freezing")
+    case temp >= 0 && temp <= 15:
+        fmt.Println("Cold")
+    case temp >= 16 && temp <= 30:
+        fmt.Println("Warm")
+    case temp > 30:
+        fmt.Println("Hot")
+    default:
+        fmt.Println("Not a valid input")
+    }
+}
+
 
 // =========================================================
 
@@ -273,6 +411,34 @@ func fifth() {
 // =========================================================
 
 
+
+func cfive() {
+	var tmarks float64
+	var ispassedMath, ispassedScience bool
+
+	fmt.Print("Enter total marks (in percentage): ")
+	fmt.Scan(&tmarks)
+
+	fmt.Print("Passed Math? (true/false): ")
+	fmt.Scan(&ispassedMath)
+
+	fmt.Print("Passed Science? (true/false): ")
+	fmt.Scan(&ispassedScience)
+
+	if tmarks >= 60 {
+		if ispassedMath {
+			if ispassedScience {
+				fmt.Println("eligible for admission")
+			} else {
+				fmt.Println("not eligible failed in science")
+			}
+		} else {
+			fmt.Println("not eligible failed in math")
+		}
+	} else {
+		fmt.Println("not eligible: marks less than 60%")
+	}
+}
 
 
 // =========================================================
