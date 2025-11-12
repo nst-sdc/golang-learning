@@ -8,7 +8,26 @@
 // 1. Write a program to check if a number is positive, negative, or zero using if statements.
 
 // =========================================================
+package main
 
+import (
+	"fmt"
+	"internal/fmtsort"
+)
+
+func main() {
+
+	var number int;
+	fmt.Scanln(&number)
+
+	if number >0 {
+		fmt.Println("Positive number")
+	} else if number ==0 {
+		fmt.Println("Zero")
+	} else {
+		fmt.Println("Negative number")
+	}
+}
 
 
 
@@ -21,6 +40,23 @@
 
 
 
+// DOUBT: How i can run both function one by one?
+
+func second() {
+
+	var age int;
+	fmt.Scanln(&age)
+
+	if age >=18 {
+		fmt.Println("Eligible for vote")
+
+	} else {
+		fmt.Println("Not eligible")
+	}
+}
+
+
+
 // =========================================================
 
 
@@ -28,7 +64,18 @@
 
 // =========================================================
 
+func third() {
 
+	var n int;
+	fmt.Scanln(&n)
+
+	if n%2==0 {
+		fmt.Println("Even")
+	} else {
+		fmt.Println("Odd")
+	}
+
+}
 
 
 // =========================================================
@@ -39,7 +86,18 @@
 // =========================================================
 
 
+func forth() {
+	var marks int;
 
+	fmt.Scanln(&marks)
+
+	if marks >= 40 {
+		fmt.Println("Pass")
+
+	} else {
+		fmt.Println("Fail")
+	}
+}
 
 // =========================================================
 
@@ -47,7 +105,21 @@
 
 // =========================================================
 
+func fifth() {
+	var year int;
 
+	fmt.Scanln(&year)
+
+	if year % 100==0 {
+		fmt.Println("Not a leap")
+
+	} else if year % 4 == 0{
+		fmt.Println("leap")
+		
+	} else{
+		fmt.Println("Not a leap")
+	}
+}
 
 
 // =========================================================
@@ -276,4 +348,3 @@
 
 
 // =========================================================
-
