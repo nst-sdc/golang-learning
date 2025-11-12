@@ -6,6 +6,22 @@
 // -----------------------------------------------------------
 
 // 1. Write a program to check if a number is positive, negative, or zero using if statements.
+// package main
+
+// import "fmt"
+
+// func main(){
+// 	var a int
+// 	fmt.Scan(&a)
+
+// 	if a>0{
+// 		fmt.Println("positive")
+// 	}else if a<0{
+// 		fmt.Println("negative")
+// 	}else{
+// 		fmt.Println("zero")
+// 	}
+// }
 
 // =========================================================
 
@@ -15,6 +31,19 @@
 // =========================================================
 
 // 2. Write a program to determine whether a person is eligible to vote based on age.
+// package main
+
+// import "fmt"
+
+// func main(){
+// 	var a int
+// 	fmt.Scan(&a)
+// 	if a>18{
+// 		fmt.Println("positive")
+// 	}else if a<18{
+// 		fmt.Println("negative")
+// 	}
+// }
 
 // =========================================================
 
@@ -25,6 +54,19 @@
 
 
 // 3. Write a program that checks whether a given number is even or odd.
+// package main
+
+// import "fmt"
+
+// func main(){
+// 	var a int
+// 	fmt.Scan(&a)
+// 	if a%2==0{
+// 		fmt.Println("even")
+// 	}else{
+// 		fmt.Println("odd")
+// 	}
+// }
 
 // =========================================================
 
@@ -35,6 +77,20 @@
 
 
 // 4. Write a program that takes a student’s marks and prints “Pass” or “Fail” using an if-else condition.
+// package main
+
+// import "fmt"
+
+// func main(){
+// 	var a int
+// 	fmt.Scan(&a)
+// 	if a%2==0{
+// 		fmt.Println("even")
+// 	}else{
+// 		fmt.Println("odd")
+// 	}
+// }
+
 
 // =========================================================
 
@@ -44,6 +100,19 @@
 // =========================================================
 
 // 5. Write a program to check whether a given year is a leap year or not.
+// package main
+
+// import "fmt"
+
+// func main(){
+// 	var a int
+// 	fmt.Scan(&a)
+// 	if a%2==0{
+// 		fmt.Println("even")
+// 	}else{
+// 		fmt.Println("odd")
+// 	}
+// }
 
 // =========================================================
 
@@ -64,6 +133,28 @@
 //    Below 60 → Grade F
 
 // =========================================================
+// package main
+
+// import "fmt"
+
+// func main(){
+// 	var a int
+// 	fmt.Scan(&a)
+// 	if a>=90{
+//             fmt.Println("Grade A")
+//     }else if a>=80{
+//             fmt.Println("Grade B")
+//     }else if a>=70{
+//             fmt.Println("Grade C")
+//     }else if a>=60{
+//             fmt.Println("Grade D")
+//     }else{
+//             fmt.Println("Grade F")
+//     }
+
+
+// }
+
 
 
 
@@ -72,6 +163,20 @@
 
 // 2. Write a program that takes two numbers and prints which one is greater using if-else.
 
+// package main
+
+// import "fmt"
+
+// func main(){
+// 	var a,b int
+// 	fmt.Scan(&a,&b)
+
+// 	if a>b{
+// 		fmt.Println(a)
+// 	}else{
+// 		fmt.Println(b)
+// 	}
+// }
 // =========================================================
 
 
@@ -90,6 +195,30 @@
 
 // 4. Write a program that takes a day name (like Monday, Tuesday, etc.) and prints whether it’s a weekday or weekend using switch.
 
+// package main
+// import "fmt"
+
+// func main(){
+// 	var a string
+// 	fmt.Scan(&a)
+// 	switch a{
+// 	case "monday":
+// 		fmt.Println("weekday")
+// 	case "tuesday":
+// 		fmt.Println("weekday")
+// 	case "Wednesday":
+// 		fmt.Println("weekday")
+// 	case "Thursday":
+// 		fmt.Println("weekday")
+// 	case "Friday":
+// 		fmt.Println("weekday")
+// 	case "Saturday":
+// 		fmt.Println("weekend")
+// 	case "Sunday":
+// 		fmt.Println("weekend")
+// 	}
+// }
+
 // =========================================================
 
 
@@ -98,6 +227,22 @@
 // =========================================================
 
 // 5. Write a program that uses a short if statement to check if a number is divisible by 3 and 5 at the same time.
+
+// package main
+// import "fmt"
+
+// func main(){
+// 	var a int
+// 	fmt.Scan(&a)
+
+// 	if a%3==0 && a%5==0{
+// 		fmt.Println("yes")
+// 	}else{
+// 		fmt.Println("no")
+// 	}
+
+// }
+
 
 // =========================================================
 
@@ -133,6 +278,24 @@
 
 // Hint: You can compare input strings using the == operator.
 
+// package main
+// import "fmt"
+
+// func main(){
+// 	 email:="abc@gmail.com"
+// 	 pass:=123
+//   var a string
+// 	var b int
+// 	fmt.Scan(&a,&b)
+
+// 	if a==email && b==pass{
+// 		fmt.Println("login successful")
+// 	}else if a==email && b!=pass{
+// 		fmt.Println("Invalid password")
+// 	}else{
+// 		fmt.Println("User not found")
+// 	}
+// }
 
 // =========================================================
 
@@ -148,6 +311,25 @@
 //
 //    - Ask the user to enter the lengths of all three sides.
 //    - Use nested if statements to determine the triangle type.
+
+// package main
+// import "fmt"
+
+// func main(){
+// 	var a,b,c int
+// 	fmt.Scan(&a,&b,&c)
+//   if a==b==c{
+// 		fmt.Println("Equilateral")
+// 	}else{
+// 		if a==b or b==c or c==a{
+// 			fmt.Println("isocellss")
+// 		}else{
+// 			fmt.Println("Scalene")
+// 		}
+// 	}
+
+// }
+
 
 // =========================================================
 
