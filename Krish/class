@@ -1,0 +1,89 @@
+// package main
+
+// import "fmt"
+
+// func main() {
+//     fmt.Println("Krish Kumar Thakur")
+// }
+// package main
+// import "fmt"
+// func main(){
+//     fmt.Print("Krish Kumar Thakur")
+// }
+
+
+
+
+// package main
+// import "fmt"
+// var a,b int
+//  fmt.Scan(&a,&b) 
+
+// func main(){
+//     fmt.Print(a-b)
+// // }
+// package main
+// import "fmt"
+// func main (){
+// var name1 string = "Hola Amigo"
+
+// name2 := "Krish Kr"
+
+// var (
+//     name3 = "krish"
+// )
+
+// var name,age  = "krish" , 18
+
+// fmt.Println(name1)
+// fmt.Println(name2)
+// fmt.Println(name3)
+// fmt.Println(name,age)
+
+// }
+
+// package main
+// import "fmt"
+// func main(){
+//     var name1 = "Krish Kr"
+//     name := "krish"
+//     var name,age = "krish" , "18"
+
+// }
+
+
+
+// func main(){
+//     fmt.Printf("My name is %s and i am %s year old." name,age)
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+//     age := 14
+//     if age>=18{
+//         fmt.Print("Grade-A")
+//     }else{
+//         fmt.Print("Grade-B")
+//     }
+// }
+
+package main
+
+import "fmt"
+
+func main() {
+    day  := 34
+    switch day{
+    case 16:
+        fmt.Println("Tuesday")
+    case 17:
+        fmt.Println("Monday")
+    case 18:
+        fmt.Println("Saturday")
+    default:
+        fmt.Println("koi bhi din nhi hai")  
+    }
+}
