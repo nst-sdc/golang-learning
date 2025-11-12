@@ -1,24 +1,29 @@
+// Assignment: Conditional Statements in Go (Golang)
+// Topics Covered: if, else if, else, nested if, short if, switch, fallthrough, switch without expression
+
+// -----------------------------------------------------------
 // Section A: Easy (Fundamentals)
 // -----------------------------------------------------------
 
 // 1. Write a program to check if a number is positive, negative, or zero using if statements.
 
+// =========================================================
 package main
 import "fmt"
+
 func main() {
     var num float64
-    num = 8
+    fmt.Print("Enter a number: ")
+    fmt.Scan(&num)
 
     if num > 0 {
-        fmt.Println("The number is positive.")
+        fmt.Println("Number is positive")
     } else if num < 0 {
-        fmt.Println("The number is negative.")
+        fmt.Println("Number is negative")
     } else {
-        fmt.Println("The number is zero.")
+        fmt.Println("Number is zero")
     }
 }
-
-
 
 
 
@@ -27,19 +32,21 @@ func main() {
 // 2. Write a program to determine whether a person is eligible to vote based on age.
 
 // =========================================================
-
 package main
 import "fmt"
+
 func main() {
     var age int
-    age = 20
+    fmt.Print("Enter your age: ")
+    fmt.Scan(&age)
 
     if age >= 18 {
-        fmt.Println("Eligible to vote.")
+        fmt.Println("You can vote!")
     } else {
-        fmt.Println("Not eligible to vote.")
+        fmt.Println("Sorry, you are not eligible to vote.")
     }
 }
+
 
 
 // =========================================================
@@ -49,18 +56,23 @@ func main() {
 
 // =========================================================
 
+// 3. Check even or odd number
 package main
 import "fmt"
-func main() {
-    var num int
-    num = 7
 
-    if num%2 == 0 {
-        fmt.Println("The number is even.")
+func main() {
+    var n int
+    fmt.Print("Enter a number: ")
+    fmt.Scan(&n)
+
+    if n%2 == 0 {
+        fmt.Println("Even number")
     } else {
-        fmt.Println("The number is odd.")
+        fmt.Println("Odd number")
     }
 }
+
+
 
 // =========================================================
 
@@ -71,9 +83,11 @@ func main() {
 
 package main
 import "fmt"
+
 func main() {
     var marks int
-    marks = 75
+    fmt.Print("Enter your marks: ")
+    fmt.Scan(&marks)
 
     if marks >= 60 {
         fmt.Println("Pass")
@@ -88,11 +102,15 @@ func main() {
 
 // 5. Write a program to check whether a given year is a leap year or not.
 
+// =========================================================
+
 package main
 import "fmt"
+
 func main() {
     var year int
-    year = 2020
+    fmt.Print("Enter year: ")
+    fmt.Scan(&year)
 
     if (year%4 == 0 && year%100 != 0) || (year%400 == 0) {
         fmt.Println("Leap Year")
@@ -100,10 +118,6 @@ func main() {
         fmt.Println("Not a Leap Year")
     }
 }
-
-// =========================================================
-
-
 
 
 // =========================================================
@@ -123,46 +137,42 @@ func main() {
 
 package main
 import "fmt"
-func main() {
-    var marks int
-    marks = 85
 
-    if marks >= 90 {
-        fmt.Println("Grade A")
-    } else if marks >= 75 {
-        fmt.Println("Grade B")
-    } else if marks >= 60 {
-        fmt.Println("Grade C")
+func main() {
+    var year int
+    fmt.Print("Enter year: ")
+    fmt.Scan(&year)
+
+    if (year%4 == 0 && year%100 != 0) || (year%400 == 0) {
+        fmt.Println("Leap Year")
     } else {
-        fmt.Println("Grade F")
+        fmt.Println("Not a Leap Year")
     }
 }
-
 
 
 // =========================================================
 
 // 2. Write a program that takes two numbers and prints which one is greater using if-else.
 
-package main
-import "fmt"
-func main() {
-    var num1, num2 int
-    num1 = 10
-    num2 = 20
-
-    if num1 > num2 {
-        fmt.Println("Number 1 is greater.")
-    } else if num1 < num2 {
-        fmt.Println("Number 2 is greater.")
-    } else {
-        fmt.Println("Both numbers are equal.")
-    }
-}
-
 // =========================================================
 
+package main
+import "fmt"
 
+func main() {
+    var a, b int
+    fmt.Print("Enter two numbers: ")
+    fmt.Scan(&a, &b)
+
+    if a > b {
+        fmt.Println(a, "is greater")
+    } else if b > a {
+        fmt.Println(b, "is greater")
+    } else {
+        fmt.Println("Both are equal")
+    }
+}
 
 
 // =========================================================
@@ -173,11 +183,13 @@ func main() {
 
 package main
 import "fmt"
-func main() {
-    var char string
-    char = "a"
 
-    switch char {
+func main() {
+    var ch string
+    fmt.Print("Enter a letter: ")
+    fmt.Scan(&ch)
+
+    switch ch {
     case "a", "e", "i", "o", "u":
         fmt.Println("Vowel")
     default:
@@ -190,11 +202,15 @@ func main() {
 
 // 4. Write a program that takes a day name (like Monday, Tuesday, etc.) and prints whether it’s a weekday or weekend using switch.
 
+// =========================================================
+
 package main
 import "fmt"
+
 func main() {
     var day string
-    day = "Saturday"
+    fmt.Print("Enter day name: ")
+    fmt.Scan(&day)
 
     switch day {
     case "Saturday", "Sunday":
@@ -203,10 +219,6 @@ func main() {
         fmt.Println("Weekday")
     }
 }
-
-// =========================================================
-
-
 
 
 // =========================================================
@@ -217,14 +229,16 @@ func main() {
 
 package main
 import "fmt"
+
 func main() {
     var num int
-    num = 15
+    fmt.Print("Enter number: ")
+    fmt.Scan(&num)
 
     if num%3 == 0 && num%5 == 0 {
-        fmt.Println("The number is divisible by both 3 and 5.")
+        fmt.Println("Divisible by 3 and 5")
     } else {
-        fmt.Println("The number is not divisible by both 3 and 5.")
+        fmt.Println("Not divisible by both")
     }
 }
 
@@ -259,35 +273,30 @@ func main() {
 // Hint: You can compare input strings using the == operator.
 
 
-
 // =========================================================
+
 package main
+import "fmt"
 
-import (
-	"fmt"
-)
 func main() {
-	// Predefined username and password
-	const correctUsername = "admin"
-	const correctPassword = "12345"
+    const username = "admin"
+    const password = "1234"
 
-	var username, password string
-    // Taking username input
+    var user, pass string
+
     fmt.Print("Enter username: ")
-    fmt.Scan(&username)
-    // Taking password input
+    fmt.Scan(&user)
     fmt.Print("Enter password: ")
-    fmt.Scan(&password)
+    fmt.Scan(&pass)
 
-    if username == correctUsername && password == correctPassword {
-        fmt.Println("Login successful")
-    } else if username == correctUsername && password != correctPassword {
+    if user == username && pass == password {
+        fmt.Println("Login Successful!")
+    } else if user == username {
         fmt.Println("Invalid password")
     } else {
         fmt.Println("User not found")
     }
-    }
-
+}
 
 
 // =========================================================
@@ -303,28 +312,22 @@ func main() {
 // =========================================================
 
 package main
-
 import "fmt"
 
 func main() {
-    var side1, side2, side3 float64
+    var s1, s2, s3 float64
 
-    fmt.Print("Enter the length of side 1: ")
-    fmt.Scan(&side1)    
-    fmt.Print("Enter the length of side 2: ")
-    fmt.Scan(&side2)
-    fmt.Print("Enter the length of side 3: ")
-    fmt.Scan(&side3)
+    fmt.Print("Enter 3 sides: ")
+    fmt.Scan(&s1, &s2, &s3)
 
-    if side1 == side2 && side2 == side3 {
-        fmt.Println("The triangle is Equilateral.")
-    } else if side1 == side2 || side2 == side3 || side1 == side3 {
-        fmt.Println("The triangle is Isosceles.")
+    if s1 == s2 && s2 == s3 {
+        fmt.Println("Equilateral triangle")
+    } else if s1 == s2 || s2 == s3 || s1 == s3 {
+        fmt.Println("Isosceles triangle")
     } else {
-        fmt.Println("The triangle is Scalene.")
+        fmt.Println("Scalene triangle")
     }
-        
-    }
+}
 
 
 // =========================================================
@@ -341,29 +344,27 @@ func main() {
 // =========================================================
 
 package main
-import (
-	"fmt"
-	"internal/fmtsort"
-)
+import "fmt"
 
 func main() {
-    var choice int16    
+    var choice int
     fmt.Println("1. Start Game")
     fmt.Println("2. Load Game")
     fmt.Println("3. Exit")
-    fmt.Print("Enter your choice: ")
+    fmt.Print("Enter choice: ")
     fmt.Scan(&choice)
 
     switch choice {
     case 1:
-        fmtsort.StartGame()
+        fmt.Println("Game Started!")
     case 2:
-        fmtsort.LoadGame()
+        fmt.Println("Game Loaded!")
     case 3:
-        fmtsort.ExitGame()
+        fmt.Println("Goodbye!")
     default:
-        fmt.Println("Invalid option")
+        fmt.Println("Invalid choice")
     }
+}
 
 
 // =========================================================
@@ -381,25 +382,24 @@ func main() {
 // =========================================================
 
 package main
-
 import "fmt"
 
 func main() {
-    var temperature int
-    fmt.Print("Enter the current temperature: ")
-    fmt.Scan(&temperature)
+    var temp int
+    fmt.Print("Enter temperature: ")
+    fmt.Scan(&temp)
 
     switch {
-    case temperature < 0:
+    case temp < 0:
         fmt.Println("Freezing")
-    case temperature >= 0 && temperature <= 15:
+    case temp >= 0 && temp <= 15:
         fmt.Println("Cold")
-    case temperature >= 16 && temperature <= 30:
+    case temp >= 16 && temp <= 30:
         fmt.Println("Warm")
-    case temperature > 30:
+    case temp > 30:
         fmt.Println("Hot")
     }
-
+}
 
 
 // =========================================================
@@ -414,40 +414,35 @@ func main() {
 //    - Otherwise, print the specific reason for rejection.
 
 // =========================================================
-package main
 
-import (
-	"fmt"
-)
+package main
+import "fmt"
 
 func main() {
-    var totalMarks float64
-    var passedMath, passedScience bool
+    var marks float64
+    var math, science bool
 
-    fmt.Print("Enter total marks (in percentage): ")
-    fmt.Scan(&totalMarks)
-    fmt.Print("Did the student pass Math? (true/false): ")
-    fmt.Scan(&passedMath)
-    fmt.Print("Did the student pass Science? (true/false): ")
-    fmt.Scan(&passedScience)
+    fmt.Print("Enter total marks: ")
+    fmt.Scan(&marks)
+    fmt.Print("Passed in Math (true/false)? ")
+    fmt.Scan(&math)
+    fmt.Print("Passed in Science (true/false)? ")
+    fmt.Scan(&science)
 
-    if totalMarks >= 60 {
-        if passedMath && passedScience {
+    if marks >= 60 {
+        if math && science {
             fmt.Println("Eligible for admission")
+        } else if !math && !science {
+            fmt.Println("Not passed in Math and Science")
+        } else if !math {
+            fmt.Println("Not passed in Math")
         } else {
-            if !passedMath && !passedScience {
-                fmt.Println("Rejected: Did not pass Math and Science")
-            } else if !passedMath {
-                fmt.Println("Rejected: Did not pass Math")
-            } else {
-                fmt.Println("Rejected: Did not pass Science")
-            }
+            fmt.Println("Not passed in Science")
         }
     } else {
-        fmt.Println("Rejected: Insufficient marks")
+        fmt.Println("Marks less than 60% - Not eligible")
     }
 }
-
 
 
 // =========================================================
@@ -465,32 +460,21 @@ func main() {
 // =========================================================
 
 package main
-
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	var a, b, c int
+    var a, b, c int
+    fmt.Print("Enter 3 numbers: ")
+    fmt.Scan(&a, &b, &c)
 
-	fmt.Print("Enter first number: ")
-	fmt.Scan(&a)
-
-	fmt.Print("Enter second number: ")
-	fmt.Scan(&b)
-
-	fmt.Print("Enter third number: ")
-	fmt.Scan(&c)
-
-	if a >= b && a >= c {
-		fmt.Println("The largest number is:", a)
-	} else if b >= a && b >= c {
-		fmt.Println("The largest number is:", b)
-	} else {
-		fmt.Println("The largest number is:", c)
-	}
+    if a >= b && a >= c {
+        fmt.Println(a, "is largest")
+    } else if b >= a && b >= c {
+        fmt.Println(b, "is largest")
+    } else {
+        fmt.Println(c, "is largest")
+    }
 }
-
 
 
 // =========================================================
@@ -504,42 +488,35 @@ func main() {
 // =========================================================
 
 package main
-
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	var num1, num2 float64
-	var operator string
+    var n1, n2 float64
+    var op string
 
-	// Take inputs
-	fmt.Print("Enter first number: ")
-	fmt.Scan(&num1)
+    fmt.Print("Enter first number: ")
+    fmt.Scan(&n1)
+    fmt.Print("Enter second number: ")
+    fmt.Scan(&n2)
+    fmt.Print("Enter operator (+ - * /): ")
+    fmt.Scan(&op)
 
-	fmt.Print("Enter second number: ")
-	fmt.Scan(&num2)
-
-	fmt.Print("Enter operator (+, -, *, /): ")
-	fmt.Scan(&operator)
-
-	// Perform operation using switch
-	switch operator {
-	case "+":
-		fmt.Println("Result:", num1+num2)
-	case "-":
-		fmt.Println("Result:", num1-num2)
-	case "*":
-		fmt.Println("Result:", num1*num2)
-	case "/":
-		if num2 != 0 {
-			fmt.Println("Result:", num1/num2)
-		} else {
-			fmt.Println("Error: Division by zero is not allowed")
-		}
-	default:
-		fmt.Println("Invalid operator")
-	}
+    switch op {
+    case "+":
+        fmt.Println("Result:", n1+n2)
+    case "-":
+        fmt.Println("Result:", n1-n2)
+    case "*":
+        fmt.Println("Result:", n1*n2)
+    case "/":
+        if n2 != 0 {
+            fmt.Println("Result:", n1/n2)
+        } else {
+            fmt.Println("Cannot divide by zero")
+        }
+    default:
+        fmt.Println("Invalid operator")
+    }
 }
 
 
@@ -555,23 +532,21 @@ func main() {
 // =========================================================
 
 package main
-
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	var year int
-	fmt.Print("Enter a year: ")
-	fmt.Scan(&year)
+    var year int
+    fmt.Print("Enter year: ")
+    fmt.Scan(&year)
 
-	if year%400 == 0 {
-		fmt.Println(year, "is a century leap year.")
-	} else if year%4 == 0 {
-		fmt.Println(year, "is a normal leap year.")
-	} else {
-		fmt.Println(year, "is not a leap year.")
-	}
+    if year%400 == 0 {
+        fmt.Println("Century leap year")
+    } else if year%4 == 0 && year%100 != 0 {
+        fmt.Println("Normal leap year")
+    } else {
+        fmt.Println("Not a leap year")
+    }
 }
+
 
 // =========================================================
