@@ -1,0 +1,87 @@
+name: Auto Check Go Assignment
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "*/*.go"
+
+jobs:
+  check-assignment:
+    runs-on: ubuntu-latest
+    name: Validate Student Submission
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Detect student folder
+        id: detect
+        run: |
+          folder=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep "/" | cut -d/ -f1 | uniq | head -1)
+          echo "student_folder=$folder" >> $GITHUB_OUTPUT
+          echo "Detected folder: $folder"
+
+      - name: Validate submission files
+        run: |
+          folder=${{ steps.detect.outputs.student_folder }}
+          echo "Checking folder: $folder"
+          if [[ ! -f "$folder/ans.go" ]]; then
+            echo "Missing ans.go"
+            exit 1
+          fi
+          if [[ ! -f "$folder/class.go" ]]; then
+            echo "Missing class.go"
+            exit 1
+          fi
+          echo "Folder structure is valid."
+
+      - name: Prepare assignment for testing
+        run: |
+          folder=${{ steps.detect.outputs.student_folder }}
+          mkdir -p testdir
+          cp ASSIGNMENT.go testdir/
+          cp "$folder/ans.go" testdir/
+          cd testdir
+          echo "Files ready for testing:"
+          ls -l
+
+      - name: Run Go tests
+        run: |
+          cd testdir
+          echo "Running go vet..."
+          go vet ./... || true
+
+          echo "Running Go build..."
+          go build ./... || { echo "Build failed"; exit 1; }
+
+          echo "Build successful."
+          echo "Running go run to verify output..."
+          go run ans.go > result.txt || true
+
+          echo "Test completed."
+          cat result.txt
+
+      - name: Post PR comment with results
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: "Assignment Results"
+          path: testdir/result.txt
+
+      - name: Label PR
+        if: always()
+        run: |
+          cd testdir
+          if grep -qi "error" result.txt || grep -qi "fail" result.txt; then
+            gh pr edit ${{ github.event.pull_request.number }} --add-label "Failed"
+          else
+            gh pr edit ${{ github.event.pull_request.number }} --add-label "Passed"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
